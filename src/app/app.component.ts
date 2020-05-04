@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { HttpService } from './servicios/http.service';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'TP2020Pelis';
+
+  constructor( private http: HttpService) { }
+
+  lista : Array<any>
+
+  ngOnInit(): void {
+
+}
+
 }
