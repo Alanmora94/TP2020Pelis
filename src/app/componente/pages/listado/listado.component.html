@@ -11,29 +11,53 @@
     </div>
   </div>
 
-</div>
 
-<div *ngIf="lista != null" >
 
-  <div *ngFor="let peli of lista" >
 
-    <div class="row" >
-      <div class="col-sm">
-        <div class="card" style="width: 13rem;">
-          <img [src]= "Dominioimg.concat(peli.poster_path)" class="card-img-top" alt="...">
-          <div class="card-body">
-              <h6>Titulo: {{ peli.original_title }}</h6>
-              <h6>Idioma Original:   {{ peli.original_language }}</h6>
 
-          </div>
+    <div class="row justify-content-md-center">
+      <div class="col-md-6">
+        <div *ngIf="lista != null" >
+
+          <div class="scruLista">
+
+          <div *ngFor="let peli of lista" >
+
+            <div class="row" >
+              <div class="col-sm-4">
+                <div class="card" style="width: 13rem;">
+                  <img [src]= "Dominioimg.concat(peli.poster_path)" class="card-img-top" alt="...">
+                  <div class="card-body">
+                      <h3>Titulo: {{ peli.original_title }}</h3>
+                      <h3>Idioma Original:   {{ peli.original_language }}</h3>
+
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-2">
+                <button type="button" (click)="Detalle(peli.id)" class="btn btn-light">Detalle</button>
+              </div>
+            </div>
+
+
         </div>
-        <div class="col-sm">
-          <button type="button" (click)="Detalle(peli.id)" class="btn btn-light">Detalle</button>
         </div>
+        </div>
+
+
       </div>
     </div>
 
 
+
+
+
+
+
+
 </div>
+
+
+
 
 

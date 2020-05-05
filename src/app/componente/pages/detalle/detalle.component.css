@@ -6,3 +6,32 @@
   height: 300px;
   width: auto;
 }
+
+img{
+
+  height: 600px;
+  width: auto;
+}
+
+.logo{
+
+  height: 70px;
+  width: auto;
+  margin: 10px;
+}
+
+.scru {
+  height: 100px;
+  width: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.scruP {
+  height: 150px;
+  width: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+

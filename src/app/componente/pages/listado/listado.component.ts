@@ -27,7 +27,7 @@ export class ListadoComponent implements OnInit {
 
 Detalle(x){
   localStorage.setItem("idDetalle",x);
-  console.log(x);
+
   this.http.navegar('detalle')
 
 }
@@ -39,7 +39,7 @@ buscar(){
 
   this.http.ObtenerPeliculas(this.variable)
   .subscribe((data: JSON) => {
-      console.log(data);
+
       this.resultados = data;
       this.lista = this.resultados.results;
 

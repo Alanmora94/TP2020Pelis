@@ -8,6 +8,16 @@
       <li class="nav-item">
       <a class="nav-link" routerLink="/listado" routerLinkActive="active-link">Listado de Peliculas</a>
       </li>
+
+      <div *ngIf="this.Getfavorito();">
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/favoritos" routerLinkActive="active-link">favoritos</a>
+        </li>
+
+      </div>
+
+
   </ul>
   </div>
 </nav>

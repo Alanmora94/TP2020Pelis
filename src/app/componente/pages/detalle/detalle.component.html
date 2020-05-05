@@ -27,15 +27,79 @@
 </div>
 -->
 
+
+
+
+  <div *ngIf="cargar" >
+
+  <div class="row justify-content-md-center">
+    <div class="col-sm-3"><img [src]=" this.pelicula.poster_path" alt="" class="rounded"></div>
+    <div class="col-sm-4">
+
+      <h1>{{pelicula.original_title}}</h1>
+      <br>
+      <ul class="list-group">
+        <li class="list-group-item active">Info</li>
+        <li class="list-group-item"><p><b>Titulo Original:</b> {{pelicula.original_title}}  </p></li>
+        <li class="list-group-item"><div class="scru"><p><b>Descripcion:</b><span> {{pelicula.overview}}</span>   </p></div></li>
+        <li class="list-group-item"><p><b>Idioma:</b> {{pelicula.original_language}}  </p></li>
+        <li class="list-group-item"><p><b>Estreno:</b> {{pelicula.release_date}}  </p></li>
+        <li class="list-group-item"><p><b>Pagina Oficial:</b> <a [href]="pelicula.homepage">  {{pelicula.homepage}}</a>  </p></li>
+        <li class="list-group-item">
+            <div><h3><b>Productoras:</b></h3></div>
+            <div class="scruP">
+              <div *ngFor="let compa of companias" >
+                <div class="row" >
+
+                  <div class="col-sm-4"><b>{{compa.name}}</b></div>
+                  <div class="col-sm-4"><img [src]="compa.logo_path" alt="" class="rounded" class="logo"></div>
+
+                </div>
+
+              </div>
+
+            </div></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row justify-content-md-center">
+    <button type="button" (click)="favorito()" class="btn btn-light">Agregar a Favoritos</button>
+  </div>
+
+</div>
+
+  <!--
 <div class="conteiner">
 
-  <div class="row justify-content-center">
-    <div class="col-12">
+  <div class="col-6">
+    <img [src]="pelicula.poster_path" alt="" class="rounded" >
+  </div>
+  <div class="col-8">
+    <h2>{{pelicula.original_title}}</h2>
+  </div>
+
+
+  <div class="row justify-content-md-center">
+    <div class="col-md-auto">
       <h3>{{pelicula.original_title}}</h3>
     </div>
   </div>
 
+  <div class="row justify-content-md-center">
+    <div class="col col-lg-2">
+      <img [src]="pelicula.poster_path" alt="" class="rounded" >
+    </div>
+    <div class="col-md-auto">
+      Variable width content
+    </div>
+
+  </div>
+
+
+<div class="col col-lg-2">
+    <img [src]="pelicula.poster_path" alt="" class="rounded" >
 
 
 
 </div>
+  </div>-->

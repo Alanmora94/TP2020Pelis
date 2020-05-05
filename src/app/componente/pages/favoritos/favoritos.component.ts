@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AgregarFavoritoService } from '../../../servicios/agregar-favorito.service';
+import { HttpService } from '../../../servicios/http.service';
+import {ImagenesService} from '../../../servicios/imagenes.service';
+import { Favoritos } from '../../../clases/favoritos';
 
 @Component({
   selector: 'app-favoritos',
@@ -8,9 +11,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FavoritosComponent implements OnInit {
 
-  constructor() { }
+  Favorit: Array<Favoritos>;
+
+
+
+  constructor(private haux: HttpService,private favorito: AgregarFavoritoService, private img : ImagenesService) { }
+
+
+  Dominioimg: string= this.img.Dominio();
 
   ngOnInit(): void {
+
+    this.Favorit =  this.favorito.Traerfavoritos();
+    console.log(this.Favorit);
+
+
+
   }
 
 }

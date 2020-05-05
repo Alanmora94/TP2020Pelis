@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AgregarFavoritoService} from '../../../servicios/agregar-favorito.service';
+
 
 @Component({
   selector: 'app-menu',
@@ -7,9 +9,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  favFlag: Boolean = false;
+  constructor(private fav: AgregarFavoritoService) { }
+
+
+  public Getfavorito(){
+
+    return this.fav.VerificarFavoritos()
+  }
+
 
   ngOnInit(): void {
+
+    this.favFlag = this.fav.VerificarFavoritos()
+
+    /*
+    this.fav.VerificarFavoritos()
+      .subscribe((arg : Boolean)=> { this.favFlag = arg), error => {
+        console.log(error);
+      });
+    ;
+
+
+
+    this.fav.VerificarFavoritos()
+    .subscribe((data: JSON) => {
+
+
+      }, error => {
+        console.log(error);
+    });
+*/
+
+
   }
 
 }
