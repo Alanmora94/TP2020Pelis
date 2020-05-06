@@ -13,6 +13,7 @@ export class FavoritosComponent implements OnInit {
 
   Favorit: Array<Favoritos>;
   ascendente : boolean = true;
+  buscar: string = '';
 
 
   constructor(private favorito: AgregarFavoritoService, private img : ImagenesService, private orden: OrderListaService) { }

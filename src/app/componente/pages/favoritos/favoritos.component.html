@@ -1,5 +1,10 @@
 
 <div class="container">
+  <nav class="navbar navbar-light bg-light">
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" name="buscar" [(ngModel)]="buscar" placeholder="Buscar..." aria-label="Search">
+    </form>
+  </nav>
 
   <div class="row justify-content-md-center">
 
@@ -17,10 +22,10 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let peli of Favorit; index as i">
+          <tr *ngFor="let peli of Favorit | busqueda:this.buscar; index as i ">
             <th scope="row">{{i + 1}}</th>
             <td>{{peli.titulo}}</td>
-            <td>{{peli.idioma}}</td>
+            <td>{{peli.idioma | idioma}}</td>
             <td><img [src]= "peli.portada" class="imgFav" ></td>
           </tr>
         </tbody>

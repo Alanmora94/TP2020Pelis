@@ -69,6 +69,8 @@ import { ListadoComponent } from './componente/pages/listado/listado.component';
 import { AppComponent } from './app.component';
 import { DetalleComponent } from './componente/pages/detalle/detalle.component';
 import { FavoritosComponent } from './componente/pages/favoritos/favoritos.component';
+import { BusquedaPipe } from './pipes/busqueda.pipe';
+import { IdiomaPipe } from './pipes/idioma.pipe';
 
 
 
@@ -78,7 +80,9 @@ import { FavoritosComponent } from './componente/pages/favoritos/favoritos.compo
     MenuComponent,
     ListadoComponent,
     DetalleComponent,
-    FavoritosComponent
+    FavoritosComponent,
+    BusquedaPipe,
+    IdiomaPipe
   ],
   imports: [
     BrowserModule,
