@@ -62,6 +62,7 @@ import { ConfigService } from './servicios/config.service';
 import { HttpService } from './servicios/http.service';
 import {ImagenesService} from './servicios/imagenes.service';
 import {AgregarFavoritoService} from './servicios/agregar-favorito.service';
+import {OrderListaService} from './servicios/order-lista.service';
 
 import { MenuComponent } from './componente/pages/menu/menu.component';
 import { ListadoComponent } from './componente/pages/listado/listado.component';
@@ -141,7 +142,8 @@ import { FavoritosComponent } from './componente/pages/favoritos/favoritos.compo
   providers: [ConfigService,
     HttpService,
     ImagenesService,
-    AgregarFavoritoService],
+    AgregarFavoritoService,
+    OrderListaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

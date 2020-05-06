@@ -10,7 +10,16 @@ export class ImagenesService {
   Dominioimg: string= 'https://image.tmdb.org/t/p/w500';
 
   Portada(img: string): string{
-    let objeto = this.Dominioimg + img;
+
+    let objeto: string = "";
+
+    if(img != null){
+
+      objeto = this.Dominioimg + img;
+    }else{
+      objeto = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTxN3QsCpuh6LttUpoBvS0AH06It9lcoy-irzO5qAaMGUIgq7hr&usqp=CAU"
+    }
+
     return objeto;
 
   }

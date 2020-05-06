@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AgregarFavoritoService } from '../../../servicios/agregar-favorito.service';
-import { HttpService } from '../../../servicios/http.service';
 import {ImagenesService} from '../../../servicios/imagenes.service';
+import {OrderListaService} from '../../../servicios/order-lista.service';
 import { Favoritos } from '../../../clases/favoritos';
 
 @Component({
@@ -12,20 +12,30 @@ import { Favoritos } from '../../../clases/favoritos';
 export class FavoritosComponent implements OnInit {
 
   Favorit: Array<Favoritos>;
+  ascendente : boolean = true;
 
 
-
-  constructor(private haux: HttpService,private favorito: AgregarFavoritoService, private img : ImagenesService) { }
+  constructor(private favorito: AgregarFavoritoService, private img : ImagenesService, private orden: OrderListaService) { }
 
 
   Dominioimg: string= this.img.Dominio();
 
+
+  Ordenarasc(campo: string){
+
+    this.Favorit = this.orden.ordenarAsc(this.Favorit,campo,true);
+
+  }
+
+  Ordenardesc(campo: string){
+
+    this.Favorit = this.orden.ordenarAsc(this.Favorit,campo,false);
+  }
+
+
   ngOnInit(): void {
 
     this.Favorit =  this.favorito.Traerfavoritos();
-    console.log(this.Favorit);
-
-
 
   }
 

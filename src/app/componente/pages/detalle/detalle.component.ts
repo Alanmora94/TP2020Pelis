@@ -48,8 +48,10 @@ export class DetalleComponent implements OnInit {
     this.http.ObtenerPeliculasPorId(this.id)
     .subscribe((data: JSON) => {
         this.pelicula = data;
-        this.pelicula.backdrop_path = this.img.Portada(this.pelicula.backdrop_path);
+        //this.pelicula.backdrop_path = this.img.Portada(this.pelicula.backdrop_path);
+
         this.pelicula.poster_path = this.img.Portada(this.pelicula.poster_path);
+
         this.companias = this.pelicula.production_companies;
         this.poster = this.pelicula.poster_path;
         this.cargar = true;
