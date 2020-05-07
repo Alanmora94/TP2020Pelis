@@ -5,6 +5,9 @@ import { MenuComponent } from './componente/pages/menu/menu.component';
 import { ListadoComponent } from './componente/pages/listado/listado.component';
 import { DetalleComponent } from './componente/pages/detalle/detalle.component';
 import { FavoritosComponent } from './componente/pages/favoritos/favoritos.component';
+import { LoginComponent } from './componente/pages/login/login.component';
+import { LogUpComponent } from './componente/pages/log-up/log-up.component';
+import { NoEncontradaComponent } from './componente/pages/decoradores/no-encontrada/no-encontrada.component';
 
 const routes: Routes = [
 
@@ -12,7 +15,10 @@ const routes: Routes = [
     children: [
       {path: "listado", component: ListadoComponent},
       {path: "detalle", component: DetalleComponent},
-      {path: "favoritos", component: FavoritosComponent}
+      {path: "favoritos", component: FavoritosComponent},
+      {path: "login", component: LoginComponent},
+      {path: "logup", component: LogUpComponent},
+      {path: "**", component: NoEncontradaComponent}
 
   ]}
 ];

@@ -59,6 +59,7 @@ import {MatTreeModule} from '@angular/material/tree';
 
 
 import { ConfigService } from './servicios/config.service';
+import { LoginService } from './servicios/login.service';
 import { HttpService } from './servicios/http.service';
 import {ImagenesService} from './servicios/imagenes.service';
 import {AgregarFavoritoService} from './servicios/agregar-favorito.service';
@@ -71,6 +72,9 @@ import { DetalleComponent } from './componente/pages/detalle/detalle.component';
 import { FavoritosComponent } from './componente/pages/favoritos/favoritos.component';
 import { BusquedaPipe } from './pipes/busqueda.pipe';
 import { IdiomaPipe } from './pipes/idioma.pipe';
+import { LoginComponent } from './componente/pages/login/login.component';
+import { LogUpComponent } from './componente/pages/log-up/log-up.component';
+import { NoEncontradaComponent } from './componente/pages/decoradores/no-encontrada/no-encontrada.component';
 
 
 
@@ -82,7 +86,10 @@ import { IdiomaPipe } from './pipes/idioma.pipe';
     DetalleComponent,
     FavoritosComponent,
     BusquedaPipe,
-    IdiomaPipe
+    IdiomaPipe,
+    LoginComponent,
+    LogUpComponent,
+    NoEncontradaComponent
   ],
   imports: [
     BrowserModule,
@@ -147,7 +154,8 @@ import { IdiomaPipe } from './pipes/idioma.pipe';
     HttpService,
     ImagenesService,
     AgregarFavoritoService,
-    OrderListaService],
+    OrderListaService,
+    LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

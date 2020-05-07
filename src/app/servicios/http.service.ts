@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { ConfigService } from './config.service';
 import { HttpClient } from '@angular/common/http';
 import { Router } from "@angular/router";
+import { Usuario } from '../clases/usuario';
+
 
 @Injectable({
   providedIn: 'root'
@@ -39,5 +41,24 @@ navegar(dir: string){
   //console.log(dir);
   this.rutas.navigateByUrl(dir);
 }
+
+
+
+LogUp(obj: Usuario){
+
+  let vari = this.config.getSesion() + '/register';
+  console.log(vari + " " + obj.nombre + " " + obj.email + " " + obj.password);
+    return this.http.post<JSON>(vari,{email: obj.email,name: obj.nombre,pass: obj.password});
+  }
+
+
+  LogIn(obj: Usuario){
+
+    let vari = this.config.getSesion() + '/login';
+    //console.log(vari + " " + obj.nombre + " " + obj.email + " " + obj.password);
+      return this.http.post<JSON>(vari,{email: obj.email,pass: obj.password});
+    }
+
+
 
 }

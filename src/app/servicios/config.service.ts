@@ -8,6 +8,7 @@ import { from } from 'rxjs';
 export class ConfigService {
 
 
+  private sesion : string = 'http://localhost:3000';
   private dominio : string = 'https://api.themoviedb.org/3/';
   private key : string = "?api_key=703a95c1f012bfe73ad67461472a6b91";
 
@@ -23,6 +24,11 @@ export class ConfigService {
   public getKey(): string  {
     //return `${this.dominio}${path}`;
     return this.key;
+  }
+
+  public getSesion(): string  {
+    //return `${this.dominio}${path}`;
+    return this.sesion;
   }
 
 }
