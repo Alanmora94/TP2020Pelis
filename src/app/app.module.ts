@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
+import { JwtModule } from "@auth0/angular-jwt";
+
 
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -57,13 +59,15 @@ import {MatTreeModule} from '@angular/material/tree';
 
 
 
-
+import { TokenService } from './servicios/token.service';
 import { ConfigService } from './servicios/config.service';
 import { LoginService } from './servicios/login.service';
 import { HttpService } from './servicios/http.service';
 import {ImagenesService} from './servicios/imagenes.service';
 import {AgregarFavoritoService} from './servicios/agregar-favorito.service';
 import {OrderListaService} from './servicios/order-lista.service';
+
+
 
 import { MenuComponent } from './componente/pages/menu/menu.component';
 import { ListadoComponent } from './componente/pages/listado/listado.component';
@@ -76,7 +80,9 @@ import { LoginComponent } from './componente/pages/login/login.component';
 import { LogUpComponent } from './componente/pages/log-up/log-up.component';
 import { NoEncontradaComponent } from './componente/pages/decoradores/no-encontrada/no-encontrada.component';
 
-
+export function tokenGetter() {
+  return localStorage.getItem("token");
+}
 
 @NgModule({
   declarations: [
@@ -147,7 +153,12 @@ import { NoEncontradaComponent } from './componente/pages/decoradores/no-encontr
 
 
 
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter
+        }
+    })
 
   ],
   providers: [ConfigService,
@@ -155,7 +166,8 @@ import { NoEncontradaComponent } from './componente/pages/decoradores/no-encontr
     ImagenesService,
     AgregarFavoritoService,
     OrderListaService,
-    LoginService],
+    LoginService,
+    TokenService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

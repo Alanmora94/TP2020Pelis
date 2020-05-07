@@ -19,7 +19,9 @@ export class LoginService {
       .subscribe((data: JSON) => {
 
         this.paquete = data;
-        console.log(this.paquete["respuesta"]);
+
+
+        this.GuardarToken(this.paquete["respuesta"]);
 
       }, error => {
           console.log(error);
@@ -34,13 +36,33 @@ export class LoginService {
     .subscribe((data: JSON) => {
 
       this.paquete = data;
-      console.log(this.paquete["respuesta"]);
+      this.GuardarToken(this.paquete["respuesta"]);
 
     }, error => {
         console.log(error);
     });
 
 }
+
+
+
+
+GuardarToken(obj: any){
+
+  localStorage.setItem("token", JSON.stringify(obj));
+
+
+
+}
+
+
+BorrarToken(){
+
+  localStorage.setItem("token", null);
+
+}
+
+
 
 
 }

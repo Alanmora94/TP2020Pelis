@@ -8,12 +8,17 @@ import { FavoritosComponent } from './componente/pages/favoritos/favoritos.compo
 import { LoginComponent } from './componente/pages/login/login.component';
 import { LogUpComponent } from './componente/pages/log-up/log-up.component';
 import { NoEncontradaComponent } from './componente/pages/decoradores/no-encontrada/no-encontrada.component';
+import { AuthGuard } from './guards/auth.guard'
 
 const routes: Routes = [
 
   {path: "", component: MenuComponent,
     children: [
-      {path: "listado", component: ListadoComponent},
+      {path: "listado",
+       component: ListadoComponent,
+      canActivate: [AuthGuard]},
+      {path: "", component: ListadoComponent,
+      canActivate: [AuthGuard]},
       {path: "detalle", component: DetalleComponent},
       {path: "favoritos", component: FavoritosComponent},
       {path: "login", component: LoginComponent},
