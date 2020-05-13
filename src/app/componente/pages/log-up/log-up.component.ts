@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../../../clases/usuario';
-import { LoginService } from '../../../servicios/login.service';
+import { LoginService } from '../../../servicios/sesion/login.service';
 
 @Component({
   selector: 'app-log-up',
@@ -19,7 +19,7 @@ export class LogUpComponent implements OnInit {
   Registrar(){
 
 
-    this.sesion.CargarUser(new Usuario(this.nombre,this.email,this.pass));
+    this.sesion.CargarUser(new Usuario(this.email,this.pass,this.nombre,));
 
   }
 

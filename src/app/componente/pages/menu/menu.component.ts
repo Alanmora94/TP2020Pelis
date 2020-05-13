@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {AgregarFavoritoService} from '../../../servicios/agregar-favorito.service';
+import {AgregarFavoritoService} from '../../../servicios/componenetes/agregar-favorito.service';
+import { LoginService } from '../../../servicios/sesion/login.service';
+import { TokenService } from '../../../servicios/sesion/token.service';
 
 
 @Component({
@@ -10,7 +12,13 @@ import {AgregarFavoritoService} from '../../../servicios/agregar-favorito.servic
 export class MenuComponent implements OnInit {
 
   favFlag: Boolean = false;
-  constructor(private fav: AgregarFavoritoService) { }
+  usuario: string;
+
+
+  constructor(private fav: AgregarFavoritoService,public sesion: LoginService) { }
+
+
+
 
 
   public Getfavorito(){
@@ -23,23 +31,10 @@ export class MenuComponent implements OnInit {
 
     this.favFlag = this.fav.VerificarFavoritos()
 
-    /*
-    this.fav.VerificarFavoritos()
-      .subscribe((arg : Boolean)=> { this.favFlag = arg), error => {
-        console.log(error);
-      });
-    ;
+    this.sesion.ValidarToken();
 
+    this.usuario = this.sesion.GetUsername();
 
-
-    this.fav.VerificarFavoritos()
-    .subscribe((data: JSON) => {
-
-
-      }, error => {
-        console.log(error);
-    });
-*/
 
 
   }

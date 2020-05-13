@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "tppeliculas2020": {
+      "hosting": {
+        "TP2020Pelis": [
+          "tppeliculas2020"
+        ]
+      }
+    }
+  }
+}

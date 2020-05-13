@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "TP2020Pelis",
+      "public": "dist/TP2020Pelis",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

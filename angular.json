@@ -121,6 +121,10 @@
               "devServerTarget": "TP2020Pelis:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }

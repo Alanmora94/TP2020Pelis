@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AgregarFavoritoService } from '../../../servicios/agregar-favorito.service';
-import {ImagenesService} from '../../../servicios/imagenes.service';
-import {OrderListaService} from '../../../servicios/order-lista.service';
+import { AgregarFavoritoService } from '../../../servicios/componenetes/agregar-favorito.service';
+import {ImagenesService} from '../../../servicios/componenetes/imagenes.service';
+import {OrderListaService} from '../../../servicios/componenetes/order-lista.service';
 import { Favoritos } from '../../../clases/favoritos';
 
 @Component({

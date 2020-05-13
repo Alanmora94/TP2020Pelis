@@ -1,4 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<!--
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <h3 class="text-light">App de Peliculas</h3>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -28,4 +30,56 @@
   </div>
 </nav>
 <br>
+
+-->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">App de Peliculas</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" >
+        <a class="nav-link" *ngIf="this.sesion.GetSesion()"routerLink="/listado" routerLinkActive="active-link">Listado de Peliculas</a>
+      </li>
+      <li class="nav-item" *ngIf="this.Getfavorito() && this.sesion.GetSesion()">
+        <a class="nav-link" routerLink="/favoritos" routerLinkActive="active-link">favoritos</a>
+      </li>
+      <li class="nav-item" >
+        <a class="nav-link" *ngIf="!this.sesion.GetSesion()"routerLink="/login" routerLinkActive="active-link">Login</a>
+      </li>
+      <li class="nav-item" >
+        <a class="nav-link" *ngIf="!this.sesion.GetSesion()"routerLink="/logup" routerLinkActive="active-link">logup</a>
+      </li>
+      <li class="nav-item" *ngIf="this.sesion.GetSesion()">
+        <button type="button" class="btn btn-link" (click)="this.sesion.LogOut()" >Log Out</button>
+        <!--<a class="nav-link" (click)="this.sesion.LogOut()" >Log Out</a>-->
+      </li>
+
+
+    </ul>
+    <span class="navbar-text">
+
+      <ng-container *ngIf="this.sesion.GetUsername() != null && this.sesion.GetUsername() != ''; else elseTemplate">
+
+       <b> Hola {{this.sesion.GetUsername()}}</b>, aqui encontraras todas tus Peliculas!!!
+      </ng-container>
+      <ng-template #elseTemplate>
+        <h4>Debes tener una cuenta para acceder!!!</h4>
+      </ng-template>
+
+
+
+
+    </span>
+  </div>
+</nav>
+
+<div class="container" style="margin-top: 2%;" class="cuerpo">
+
 <router-outlet></router-outlet>
+
+</div>
+
+

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { HttpService } from './servicios/http.service';
 
 
 @Component({
@@ -9,7 +8,7 @@ import { HttpService } from './servicios/http.service';
 })
 export class AppComponent {
 
-  constructor( private http: HttpService) { }
+  constructor() { }
 
   lista : Array<any>
 

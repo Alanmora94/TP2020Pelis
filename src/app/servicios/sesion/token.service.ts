@@ -19,4 +19,30 @@ export class TokenService {
   }
 
 
+  GuardarToken(obj: any){
+    localStorage.setItem("token", obj);
+  }
+
+  ObtenerToken(){
+    return localStorage.getItem("token");
+  }
+
+
+
+  BorrarToken(){
+
+    try {
+
+        localStorage.removeItem("token");
+
+    } catch (error) {
+
+        console.log(error)
+    }
+
+  }
+
+
+
+
 }

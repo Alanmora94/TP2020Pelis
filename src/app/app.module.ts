@@ -4,6 +4,9 @@ import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { JwtModule } from "@auth0/angular-jwt";
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 
 import { CommonModule } from '@angular/common';
@@ -59,18 +62,17 @@ import {MatTreeModule} from '@angular/material/tree';
 
 
 
-import { TokenService } from './servicios/token.service';
-import { ConfigService } from './servicios/config.service';
-import { LoginService } from './servicios/login.service';
-import { HttpService } from './servicios/http.service';
-import {ImagenesService} from './servicios/imagenes.service';
-import {AgregarFavoritoService} from './servicios/agregar-favorito.service';
-import {OrderListaService} from './servicios/order-lista.service';
+import { TokenService } from './servicios/sesion/token.service';
+import { ConfigService } from './servicios/API/config.service';
+import { LoginService } from './servicios/sesion/login.service';
+import { HttpService } from './servicios/API/http.service';
+import {ImagenesService} from './servicios/componenetes/imagenes.service';
+import {AgregarFavoritoService} from './servicios/componenetes/agregar-favorito.service';
+import {OrderListaService} from './servicios/componenetes/order-lista.service';
 
 
 
 import { MenuComponent } from './componente/pages/menu/menu.component';
-import { ListadoComponent } from './componente/pages/listado/listado.component';
 import { AppComponent } from './app.component';
 import { DetalleComponent } from './componente/pages/detalle/detalle.component';
 import { FavoritosComponent } from './componente/pages/favoritos/favoritos.component';
@@ -79,6 +81,10 @@ import { IdiomaPipe } from './pipes/idioma.pipe';
 import { LoginComponent } from './componente/pages/login/login.component';
 import { LogUpComponent } from './componente/pages/log-up/log-up.component';
 import { NoEncontradaComponent } from './componente/pages/decoradores/no-encontrada/no-encontrada.component';
+import { CardPeliculaComponent } from './componente/pages/decoradores/card-pelicula/card-pelicula.component';
+import { ListaPeliculaComponent } from './componente/pages/Logicos/lista-pelicula/lista-pelicula.component';
+import { BuscarPeliculaComponent } from './componente/pages/decoradores/buscar-pelicula/buscar-pelicula.component';
+import { PruebaComponent } from './componente/pages/prueba/prueba.component';
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -88,14 +94,17 @@ export function tokenGetter() {
   declarations: [
     AppComponent,
     MenuComponent,
-    ListadoComponent,
     DetalleComponent,
     FavoritosComponent,
     BusquedaPipe,
     IdiomaPipe,
     LoginComponent,
     LogUpComponent,
-    NoEncontradaComponent
+    NoEncontradaComponent,
+    CardPeliculaComponent,
+    ListaPeliculaComponent,
+    BuscarPeliculaComponent,
+    PruebaComponent
   ],
   imports: [
     BrowserModule,
@@ -150,7 +159,7 @@ export function tokenGetter() {
     MatTreeModule,
     PortalModule,
     ScrollingModule,
-
+    AngularFireModule.initializeApp(environment.firebase),
 
 
     ToastrModule.forRoot(),
@@ -167,7 +176,9 @@ export function tokenGetter() {
     AgregarFavoritoService,
     OrderListaService,
     LoginService,
-    TokenService],
+    TokenService
+    //AngularFireAuth
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

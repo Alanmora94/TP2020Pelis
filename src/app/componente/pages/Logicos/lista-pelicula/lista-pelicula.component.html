@@ -1,0 +1,56 @@
+
+<div class="container">
+
+<div class="container">
+  <div class="row justify-content-start">
+    <div class="col-6">
+      <h1 *ngIf="this.popular" class="display-2">Peliculas mas populares</h1>
+    </div>
+    <div class="col-4">
+      <app-buscar-pelicula (EnviarBusqueda)="buscar($event)" ></app-buscar-pelicula>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container" *ngIf="this.lista != null">
+
+  <mat-grid-list cols="3" rowHeight="1:1.5" class="borde">
+
+
+      <mat-grid-tile *ngFor="let peli of lista" >
+
+
+        <div class="container">
+            <div class="row justify-content-md-center">
+
+              <div class="col col-lg-5">
+
+                <app-card-pelicula [Pelicula]="peli"> </app-card-pelicula>
+
+              </div>
+
+            </div>
+
+            <div class="row justify-content-md-center">
+
+                  <div class="col col-lg-5">
+                    <button type="button" (click)="Detalle(peli.id)" class="btn btn-light">Detalle</button>
+                  </div>
+
+            </div>
+          </div>
+
+
+
+      </mat-grid-tile>
+
+
+
+  </mat-grid-list>
+
+
+</div>
+
+</div>
