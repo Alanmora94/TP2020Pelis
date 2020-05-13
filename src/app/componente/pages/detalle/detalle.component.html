@@ -19,7 +19,7 @@
         <li class="list-group-item active">Info</li>
         <li class="list-group-item"><p><b>Titulo Original:</b> {{pelicula.original_title}}  </p></li>
         <li class="list-group-item"><div class="scru"><p><b>Descripcion:</b><span> {{pelicula.overview}}</span>   </p></div></li>
-        <li class="list-group-item"><p><b>Idioma:</b> {{pelicula.original_language}}  </p></li>
+        <li class="list-group-item"><p><b>Idioma:</b> {{pelicula.original_language | idioma}}  </p></li>
         <li class="list-group-item"><p><b>Estreno:</b> {{pelicula.release_date}}  </p></li>
         <li class="list-group-item"><p><b>Pagina Oficial:</b> <a [href]="pelicula.homepage">  {{pelicula.homepage}}</a>  </p></li>
         <li class="list-group-item">
