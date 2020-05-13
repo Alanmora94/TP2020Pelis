@@ -127,7 +127,18 @@ ObtenerUserName(){
 
 GetUsername(){
 
-  return this.UserName;
+  let aux = this.ObtenerUserName();
+
+  if(aux != null)
+  {
+    return aux;
+
+  }else{
+
+    return this.UserName;
+  }
+
+
 }
 
 GetSesion(){
@@ -189,6 +200,7 @@ LogOut(){
   try {
 
     localStorage.removeItem("UserName")
+
     this.UserName = '';
 
     this.token.BorrarToken();
@@ -196,6 +208,8 @@ LogOut(){
     this.sesion = false;
 
     this.ruta.navigateByUrl("");
+
+    localStorage.removeItem("idDetalle")
 
   } catch (error) {
 

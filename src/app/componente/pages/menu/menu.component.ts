@@ -33,7 +33,6 @@ export class MenuComponent implements OnInit {
 
     this.sesion.ValidarToken();
 
-    this.usuario = this.sesion.GetUsername();
 
 
 
