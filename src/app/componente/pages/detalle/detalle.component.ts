@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../../../servicios/API/http.service';
 import {ImagenesService} from '../../../servicios/componenetes/imagenes.service';
+import {NotificacionService} from '../../../servicios/componenetes/notificacion.service';
 import {AgregarFavoritoService} from '../../../servicios/componenetes/agregar-favorito.service';
 import { Favoritos } from '../../../clases/favoritos';
 
@@ -23,7 +24,7 @@ export class DetalleComponent implements OnInit {
 
   poster: string;
 
-  constructor(private http: HttpService, private img : ImagenesService, private favAux: AgregarFavoritoService) { }
+  constructor(private http: HttpService, private img : ImagenesService, private favAux: AgregarFavoritoService, private notificacion: NotificacionService) { }
 
 
 
@@ -32,8 +33,8 @@ export class DetalleComponent implements OnInit {
     let miFavorito = new Favoritos(this.pelicula.id,this.pelicula.original_title,this.pelicula.original_language,this.pelicula.poster_path);
 
     this.favAux.Agregar(miFavorito);
-    //console.log(miFavorito);
-    //this.favAux.Agregar(id);
+
+    this.notificacion.Favoritos();
 
   }
 

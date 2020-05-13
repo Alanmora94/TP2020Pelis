@@ -15,13 +15,14 @@ export class ListaPeliculaComponent implements OnInit {
 
   constructor(private http: HttpService, private toastr: ToastrService) { }
 
-
+  pageActual: number= 1;
   _peliculaLista: Array<Pelicula>;
 
 
   lista : Array<Pelicula>;
   resultados: Busqueda;
   popular: boolean;
+  _tiempo: boolean= false;
 
 
 
@@ -32,7 +33,10 @@ export class ListaPeliculaComponent implements OnInit {
 
   }
 
+  tiempo(x){
 
+    this._tiempo= x;
+  }
 
 
   buscar(event){
@@ -60,7 +64,13 @@ export class ListaPeliculaComponent implements OnInit {
   }
 
 
+
+
+
+
   ngOnInit(): void {
+
+
 
     this.popular=true;
 

@@ -1,7 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
+html, body { height: 100%;
+  width: 100%;
+}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+body{
+  /* The image used */
+  background-image: url(https://images.hdqwalls.com/wallpapers/the-snowman-2017-movie-vm.jpg) ;
+  /* Full height */
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: bottom center;
+  /* Center and scale the image nicely
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;*/
+}
+
 
 .scruLista {
   height: 600px;
@@ -30,7 +52,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
   padding: 0px;
   margin: 1px;
-  border: 3px solid #0000ff;
+  margin-bottom: 3%;
+  /*border: 3px solid #000000;*/
   border-radius: 10px;
 }
 
@@ -41,3 +64,42 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   margin: 0%;
 
 }
+
+
+.button {
+  margin: 2px;
+}
+
+
+.titulo{
+
+  font-size:xx-large;
+
+}
+
+.cabecera{
+  /*border: 6px solid #696969;*/
+  border: 20px solid rgba(0, 0, 0, 0.3);
+  background-color: aliceblue;
+  background-color:rgba(179, 66, 66, 0.2);
+  border-radius: 16px;
+   padding: 8px;
+
+
+
+}
+
+.cabeceraD{
+  font-size:xx-large;
+  border: 20px solid rgba(163, 109, 8, 0.3);
+
+  background-color:rgba(255, 255, 255, 0.699);
+  border-radius: 16px;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+
+
+}
+

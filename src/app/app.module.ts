@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule} from '@angular/core';
 import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
@@ -14,6 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatDividerModule} from '@angular/material/divider';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { NgxSpinnerModule } from "ngx-spinner";
 
 import {A11yModule} from '@angular/cdk/a11y';
 import {ClipboardModule} from '@angular/cdk/clipboard';
@@ -85,6 +87,7 @@ import { CardPeliculaComponent } from './componente/pages/decoradores/card-pelic
 import { ListaPeliculaComponent } from './componente/pages/Logicos/lista-pelicula/lista-pelicula.component';
 import { BuscarPeliculaComponent } from './componente/pages/decoradores/buscar-pelicula/buscar-pelicula.component';
 import { PruebaComponent } from './componente/pages/prueba/prueba.component';
+import { LoadingComponent } from './componente/pages/decoradores/loading/loading.component';
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -104,17 +107,20 @@ export function tokenGetter() {
     CardPeliculaComponent,
     ListaPeliculaComponent,
     BuscarPeliculaComponent,
-    PruebaComponent
+    PruebaComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
+    NgxPaginationModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
     CommonModule,
     MatSliderModule,
     MatDividerModule,
-    BrowserAnimationsModule, // required animations module
+    BrowserAnimationsModule,
+    NgxSpinnerModule, // required animations module
 
     A11yModule,
     ClipboardModule,

@@ -22,6 +22,10 @@ export class NotificacionService {
     this.toastr.warning('Hasta luego '+ $aux);
   }
 
+  Favoritos() {
+    this.toastr.info('Agregada a Favoritos');
+  }
+
 
 
 

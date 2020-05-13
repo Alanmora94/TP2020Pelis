@@ -211,7 +211,7 @@ LogOut(){
 
     this.sesion = false;
 
-    this.ruta.navigateByUrl("");
+    this.ruta.navigateByUrl("/login");
 
     this.notificacion.LogOut(this.GetUsername());
     localStorage.removeItem("idDetalle")
