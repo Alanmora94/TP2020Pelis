@@ -5,6 +5,8 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import {TokenService} from './token.service';
 import { auth } from 'firebase/app';
 import { Router } from "@angular/router";
+import {NotificacionService} from '../componenetes/notificacion.service'
+
 
 
 
@@ -18,7 +20,7 @@ export class LoginService {
   sesion: boolean=false;
 
 
-  constructor( private http: HttpService,public auth: AngularFireAuth, private token: TokenService, private ruta: Router) { }
+  constructor( private http: HttpService,public auth: AngularFireAuth, private token: TokenService, private ruta: Router, private notificacion: NotificacionService) { }
 
   objeto: any;
   CargarUser(obj: Usuario){
@@ -38,7 +40,7 @@ export class LoginService {
           console.log(token);
           this.token.GuardarToken(token);
           this.sesion =true;
-
+          this.notificacion.LogUp(this.UserName);
           this.ruta.navigateByUrl("/listado");
         }
         )
@@ -82,7 +84,9 @@ export class LoginService {
           console.log(token);
           this.token.GuardarToken(token);
 
-          if(this.ValidarToken()){this.ruta.navigateByUrl("/listado");}
+          if(this.ValidarToken()){
+            this.notificacion.LogIn(this.GetUsername());
+            this.ruta.navigateByUrl("/listado");}
 
 
         }
@@ -209,6 +213,7 @@ LogOut(){
 
     this.ruta.navigateByUrl("");
 
+    this.notificacion.LogOut(this.GetUsername());
     localStorage.removeItem("idDetalle")
 
   } catch (error) {

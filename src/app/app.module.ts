@@ -69,7 +69,7 @@ import { HttpService } from './servicios/API/http.service';
 import {ImagenesService} from './servicios/componenetes/imagenes.service';
 import {AgregarFavoritoService} from './servicios/componenetes/agregar-favorito.service';
 import {OrderListaService} from './servicios/componenetes/order-lista.service';
-
+import {NotificacionService} from './servicios/componenetes/notificacion.service';
 
 
 import { MenuComponent } from './componente/pages/menu/menu.component';
@@ -176,7 +176,8 @@ export function tokenGetter() {
     AgregarFavoritoService,
     OrderListaService,
     LoginService,
-    TokenService
+    TokenService,
+    NotificacionService
     //AngularFireAuth
   ],
   bootstrap: [AppComponent]
