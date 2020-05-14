@@ -25,6 +25,27 @@ export class OrderListaService {
   }
 
 
+  OrdenarPeliculas(lista: Array<any>, campo: string,): Array<any>{
+
+
+    if(campo == "anio"){
+
+      return lista.sort((a, b)=>( a.release_date > b.release_date) ? 1 : -1 );
+
+
+    }else{
+
+      return lista.sort((a, b)=>( a.original_title > b.original_title) ? 1 : -1 );
+    }
+
+
+
+
+  }
+
+
+
+
 
 
 }

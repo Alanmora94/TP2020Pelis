@@ -3,7 +3,7 @@ import { Pelicula } from '../../../../clases/pelicula';
 import { HttpService } from '../../../../servicios/API/http.service';
 import { ToastrService } from 'ngx-toastr';
 import { Busqueda } from '../../../../clases/busqueda';
-
+import {OrderListaService} from '../../../../servicios/componenetes/order-lista.service';
 
 @Component({
   selector: 'app-lista-pelicula',
@@ -13,8 +13,9 @@ import { Busqueda } from '../../../../clases/busqueda';
 export class ListaPeliculaComponent implements OnInit {
 
 
-  constructor(private http: HttpService, private toastr: ToastrService) { }
+  constructor(private http: HttpService, private toastr: ToastrService,private orden: OrderListaService) { }
 
+  _ordenar:string;
   pageActual: number= 1;
   _peliculaLista: Array<Pelicula>;
 
@@ -90,5 +91,33 @@ export class ListaPeliculaComponent implements OnInit {
     });
 
   }
+
+
+
+
+
+
+
+  ordenarPeli(){
+
+
+      this.lista = this.orden.OrdenarPeliculas(this.lista, this._ordenar);
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

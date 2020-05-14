@@ -1,15 +1,34 @@
 <app-loading (tiempo)="tiempo($event)"></app-loading>
 <div class="container">
 
-
   <div class="row justify-content-start" class="cabecera">
-    <div class="col">
-      <h1 *ngIf="this.popular" class="titulo" >Peliculas mas populares</h1>
+
+    <app-buscar-pelicula (EnviarBusqueda)="buscar($event)" ></app-buscar-pelicula>
+
+    <div class="row justify-content-start">
+
+       <div class="col">
+        <div class="form-group">
+         <h2>Ordenar por</h2>
+          <select class="custom-select mr-sm-5" id="ordenamiento" [(ngModel)]="this._ordenar" (change)="ordenarPeli()">
+            <option selected disabled>Ordenar...</option>
+            <option value="anio">Año</option>
+            <option value="titulo">titulo</option>
+          </select>
+        </div>
+      </div>
     </div>
-    <div class="col">
-      <app-buscar-pelicula (EnviarBusqueda)="buscar($event)" ></app-buscar-pelicula>
-    </div>
+
+
+
   </div>
+
+
+  <div class="row justify-content-center" style="margin-top:5px;">
+  <div class="col">
+    <h1 *ngIf="this.popular" class="titulo" >Peliculas mas populares</h1>
+  </div>
+</div>
   <div class="row justify-content-start">
 
 
