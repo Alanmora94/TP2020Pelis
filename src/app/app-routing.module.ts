@@ -8,7 +8,6 @@ import { LoginComponent } from './componente/pages/login/login.component';
 import { LogUpComponent } from './componente/pages/log-up/log-up.component';
 import { AuthGuard } from './guards/auth.guard'
 import { ListaPeliculaComponent } from './componente/pages/Logicos/lista-pelicula/lista-pelicula.component';
-import {PruebaComponent} from './componente/pages/prueba/prueba.component'
 import { Pagina404Component } from './componente/pages/decoradores/pagina404/pagina404.component';
 
 const routes: Routes = [
@@ -37,7 +36,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [],
   imports: [
-    // CommonModule,
+
     RouterModule.forRoot(routes)
   ],
   exports: [RouterModule]

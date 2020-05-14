@@ -10,8 +10,6 @@ export class TokenService {
   constructor(public jwtHelper: JwtHelperService) {}
 
 
-  //console.log(this.jwtHelper.decodeToken(token)); // token
-
 
   DecodificarToken(obj: any){
 
@@ -37,7 +35,7 @@ export class TokenService {
 
     } catch (error) {
 
-        console.log(error)
+        //console.log(error)
     }
 
   }

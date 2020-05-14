@@ -33,44 +33,17 @@ export class LogUpComponent implements OnInit {
    get name() { return this.formulario.get('nombre'); }
    get email() { return this.formulario.get('email'); }
 
-   /*
-   get name() { return this.contactForm.get('name'); }
-   get email() { return this.contactForm.get('email'); }
-   get password() { return this.contactForm.get('message'); }
 
-   createForm() {
-    return new FormGroup({
-      email: new FormControl('', [Validators.required, Validators.minLength(5), Validators.pattern(this.emailPattern)]),
-      name: new FormControl('', [Validators.required, Validators.minLength(5)]),
-      message: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(100)])
-    });
-  }
-
-
-  onResetForm(): void {
-    this.contactForm.reset();
-  }
-
-
-  onSaveForm(): void {
-    if (this.contactForm.valid) {
-
-
-      //this.dbData.saveMessage(this.contactForm.value);
-      this.onResetForm();
-    }
-  }
-*/
 
 Registrar(){
 
-    //console.log(aux);
+
 
     if(this.formulario.valid){
 
       this.sesion.CargarUser(new Usuario(this._email,this._pass,this._nombre,));
     }
-    //
+
 
   }
 

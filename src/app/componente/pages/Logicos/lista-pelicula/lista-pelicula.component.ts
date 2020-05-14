@@ -53,12 +53,12 @@ export class ListaPeliculaComponent implements OnInit {
 
         this.lista = this.resultados.results;
         this.popular = false;
-        //console.log(this.resultados);
+
 
       }
 
       }, error => {
-        console.log("ERROR: " + error);
+       // console.log("ERROR: " + error);
     });
 
 
@@ -87,7 +87,7 @@ export class ListaPeliculaComponent implements OnInit {
       }
 
       }, error => {
-        console.log("ERROR: " + error);
+        //console.log("ERROR: " + error);
     });
 
   }

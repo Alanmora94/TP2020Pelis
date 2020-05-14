@@ -17,17 +17,17 @@ export class ConfigService {
 
 
   public getDominio(): string {
-    //return `${this.dominio}${path}`;
+
     return this.dominio;
   }
 
   public getKey(): string  {
-    //return `${this.dominio}${path}`;
+
     return this.key;
   }
 
   public getSesion(): string  {
-    //return `${this.dominio}${path}`;
+
     return this.sesion;
   }
 

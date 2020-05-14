@@ -7,7 +7,7 @@ export class BusquedaPipe implements PipeTransform {
 
   transform(value: Array<any>, arg: string): Array<any> {
 
-    console.log("pepito: " + arg);
+
     if(arg == '' || arg.length < 3 ) return value;
 
     const resultado = [];

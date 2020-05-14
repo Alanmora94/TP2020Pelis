@@ -85,7 +85,6 @@ import { LogUpComponent } from './componente/pages/log-up/log-up.component';
 import { CardPeliculaComponent } from './componente/pages/decoradores/card-pelicula/card-pelicula.component';
 import { ListaPeliculaComponent } from './componente/pages/Logicos/lista-pelicula/lista-pelicula.component';
 import { BuscarPeliculaComponent } from './componente/pages/decoradores/buscar-pelicula/buscar-pelicula.component';
-import { PruebaComponent } from './componente/pages/prueba/prueba.component';
 import { LoadingComponent } from './componente/pages/decoradores/loading/loading.component';
 import { Pagina404Component } from './componente/pages/decoradores/pagina404/pagina404.component';
 
@@ -106,7 +105,6 @@ export function tokenGetter() {
     CardPeliculaComponent,
     ListaPeliculaComponent,
     BuscarPeliculaComponent,
-    PruebaComponent,
     LoadingComponent,
     Pagina404Component
   ],

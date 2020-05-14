@@ -37,7 +37,7 @@ export class LoginService {
           this.UserName = obj.nombre;
           this.GuardaruserName(this.UserName);
 
-          console.log(token);
+
           this.token.GuardarToken(token);
           this.sesion =true;
           this.notificacion.LogUp(this.UserName);
@@ -45,11 +45,11 @@ export class LoginService {
         }
         )
         .catch(e=>{
-          console.log("error al conseguir el token");
+          //console.log("error al conseguir el token");
         });
 
       }).catch(e=>{
-        console.log("Error al actualizar el display" + e);
+        //console.log("Error al actualizar el display" + e);
 
       });
 
@@ -57,7 +57,7 @@ export class LoginService {
 
     })
     .catch(e =>{
-      console.log(e);
+      //console.log(e);
     })
 
 
@@ -77,12 +77,12 @@ export class LoginService {
 
           this.UserName = data.user.displayName;
           this.GuardaruserName(this.UserName);
-          console.log("LOGIN:  " + data.user.displayName);
+
 
       data.user.getIdToken().then(token=>{
 
 
-          console.log(token);
+
           this.token.GuardarToken(token);
 
           if(this.ValidarToken()){
@@ -93,7 +93,7 @@ export class LoginService {
         }
         )
         .catch(e=>{
-          console.log("error al conseguir el token");
+          //console.log("error al conseguir el token");
         });
 
       }).catch(e=>{
@@ -104,7 +104,7 @@ export class LoginService {
 
     } catch (error) {
 
-        console.log("error de login");
+        //console.log("error de login");
     }
 
 
@@ -172,7 +172,6 @@ ValidarToken(){
 
       const payload =  this.token.DecodificarToken(objToken);
 
-      console.log("ESTE ES EL TOKEN " + payload["email"]);
 
 
       if(payload["email"] != null && payload["aud"] === "tppeliculas2020" ){
@@ -225,7 +224,7 @@ LogOut(){
 
   } catch (error) {
 
-    console.log(error);
+    //console.log(error);
   }
 
 }

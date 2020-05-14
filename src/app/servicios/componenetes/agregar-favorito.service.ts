@@ -30,7 +30,7 @@ export class AgregarFavoritoService {
 
     } catch (error) {
 
-      console.log(error);
+
       return false;
     }
 
@@ -40,9 +40,7 @@ export class AgregarFavoritoService {
 
   Agregar(obj: Favoritos){
 
-    console.log("LELEL: " + obj["id"]);
-    //console.log("prueba 22 :" + this.TraerDatosFavorito('551'));
-    //console.log("objeto a agregar:" + obj);
+
 
     if(this.VerificarFavoritos()){
       this.lista = JSON.parse(localStorage.getItem("favoritos"));
@@ -76,12 +74,12 @@ export class AgregarFavoritoService {
 
     }else{
 
-      console.log("entra por aca");
+
 
       this.lista.push(obj);
 
       localStorage.setItem("favoritos", JSON.stringify(this.lista));
-      //console.log("entro " + id);
+
 
     }
 

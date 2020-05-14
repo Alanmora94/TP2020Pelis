@@ -22,8 +22,7 @@ export class CardPeliculaComponent implements OnInit {
 
     this._pelicula = obj;
 
-    //console.log("ESTE ES EL STRING " + this.Dominioimg);
-    //console.log(this._pelicula.poster_path);
+
     this.portada = this.Dominioimg.concat(this._pelicula.poster_path);
 
   }

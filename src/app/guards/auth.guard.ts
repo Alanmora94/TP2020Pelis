@@ -15,21 +15,21 @@ export class AuthGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-      //return false;
+
 
        try{
 
-        console.log("entro en el guard");
+
 
          const token = this.tokenSer.ObtenerToken();
 
-        console.log("aaaa " + token);
+
 
         if (token != null) {
 
           const payload =  this.tokenSer.DecodificarToken(token);
 
-          console.log("ESTE ES EL TOKEN " + payload["email"]);
+
 
 
           if(payload["email"] != null && payload["aud"] === "tppeliculas2020" ){
