@@ -1,0 +1,13 @@
+.fondo{
+
+
+  /*background-image: url("../../../../../assets/08_opt_2.jpg");
+*/
+
+  margin: 0%;
+  padding: 0%;
+  height: 100%;
+  width: 100%;
+
+  background-position: bottom center;
+}

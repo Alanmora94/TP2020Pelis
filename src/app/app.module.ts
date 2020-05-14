@@ -82,12 +82,12 @@ import { BusquedaPipe } from './pipes/busqueda.pipe';
 import { IdiomaPipe } from './pipes/idioma.pipe';
 import { LoginComponent } from './componente/pages/login/login.component';
 import { LogUpComponent } from './componente/pages/log-up/log-up.component';
-import { NoEncontradaComponent } from './componente/pages/decoradores/no-encontrada/no-encontrada.component';
 import { CardPeliculaComponent } from './componente/pages/decoradores/card-pelicula/card-pelicula.component';
 import { ListaPeliculaComponent } from './componente/pages/Logicos/lista-pelicula/lista-pelicula.component';
 import { BuscarPeliculaComponent } from './componente/pages/decoradores/buscar-pelicula/buscar-pelicula.component';
 import { PruebaComponent } from './componente/pages/prueba/prueba.component';
 import { LoadingComponent } from './componente/pages/decoradores/loading/loading.component';
+import { Pagina404Component } from './componente/pages/decoradores/pagina404/pagina404.component';
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -103,12 +103,12 @@ export function tokenGetter() {
     IdiomaPipe,
     LoginComponent,
     LogUpComponent,
-    NoEncontradaComponent,
     CardPeliculaComponent,
     ListaPeliculaComponent,
     BuscarPeliculaComponent,
     PruebaComponent,
-    LoadingComponent
+    LoadingComponent,
+    Pagina404Component
   ],
   imports: [
     BrowserModule,
