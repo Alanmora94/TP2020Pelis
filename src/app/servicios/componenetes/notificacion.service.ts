@@ -27,6 +27,10 @@ export class NotificacionService {
   }
 
 
+  ErrorLogin() {
+    this.toastr.error('e-mail o Password invalido','Error de Sesión');
+  }
+
 
 
 

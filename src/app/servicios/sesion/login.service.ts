@@ -69,6 +69,7 @@ export class LoginService {
   IniciarSesion(obj: Usuario){
 
 
+    try {
 
 
     this.auth.signInWithEmailAndPassword(obj.email,obj.password)
@@ -96,9 +97,15 @@ export class LoginService {
         });
 
       }).catch(e=>{
-        console.log("Error al actualizar el display" + e);
+
+        this.notificacion.ErrorLogin();
 
       });
+
+    } catch (error) {
+
+        console.log("error de login");
+    }
 
 
 

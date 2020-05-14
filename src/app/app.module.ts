@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule} from '@angular/core';
 import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { JwtModule } from "@auth0/angular-jwt";
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
@@ -120,7 +120,8 @@ export function tokenGetter() {
     MatSliderModule,
     MatDividerModule,
     BrowserAnimationsModule,
-    NgxSpinnerModule, // required animations module
+    NgxSpinnerModule,
+    ReactiveFormsModule, // required animations module
 
     A11yModule,
     ClipboardModule,
